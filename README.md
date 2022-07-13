@@ -1,13 +1,9 @@
 # Install Alpine Linux using docker
 
 * [1. Getting docker up and running](#1getting-docker-up-and-running)
-* [2. Creating a linux image (Alpine) using dockerfile:](#2creating-a-linux-image)
-  * [1.2 Scope](#12-scope)
-  * [1.3 Acronyms](#13-acronyms)
-  * [1.4 References](#14-references)
-    + [1.4.1 Internal References](#141-internal-references)
-    + [1.4.2 External References](#142-external-references)
-  * [1.5 Overview](#15-overview)
+* [2. Creating a linux image (Alpine) using dockerfile:](#2creating-a-linux-image-alpine-using-dockerfile)
+  * [2.1 Building a docker image with the Dockerfile:](#a-building-docker-image-with-the-dockerfile)
+* [3. Running the script to get inside the linux container](#2running-script-to-get-inside-the-linux-container)
 
 From what I've read so far, you can use Docker to create a Linux virtual environment from where you can mount your home directory (your Mac's home directory) and start working inside it (coding, debugging, valgrind leak checking and so on..).
 
@@ -105,7 +101,7 @@ RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
 After that you just make sure you're into your home directory (use cd) and type:
 
-### a. Building docker image with the Dockerfile:
+### a. Building a docker image with the Dockerfile:
 ```shell
 docker build -t alpine:42 docker_image/
 ```
@@ -114,7 +110,7 @@ Wait for docker to finish building your image.
 
 
 
-## 2.Running script to get inside the Linux container: 
+## 2.Running the script to get inside the Linux container: 
 
 After docker succesfully built your Alpine Linux image, create a shell script and add the following to it:
 
