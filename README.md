@@ -10,7 +10,7 @@ From what I've read so far, you can use Docker to create a Linux virtual environ
 ## 1.Getting docker up and running:
 If you don't have docker installed on your mac you just need to type `command + space`and type `"Managed Software Center"` and from there on just search for docker and click on the install button.
 
-After that you need to clone the 42toolbox repository and run docker everytime you want to run it by executing the **init_docker.sh** file.
+After that you need to clone the 42toolbox repository and start docker everytime by executing the **init_docker.sh** file.
 ```git
 git clone https://github.com/alexandregv/42toolbox.git ~/42toolbox
 ```
