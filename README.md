@@ -15,19 +15,24 @@ bash ~/42toolbox/init_docker.sh
 ![bash_docker_run](/images/docker_init.png)
 
  * After you execute the init_docker.sh just press enter and you will get a message afterwards that docker is now starting.  
+
 ![bash_docker_done](/images/docker_init_after.png)
 
  * Make sure you click on remind me later if you're using 42Macs, you don't want to install updates for docker, **click remind me later**.  
+
 ![docker_update_reminder](/images/docker_update_reminder.png)
 
  * After that you can go to your docker icon in the top right corner of your screen and you can click it to see if docker is running or not.  
+
 ![docker_icon_starting](/images/docker_icon_starting.png)
 
  * A green circle with the message "Docker is running" should appear, meaning that docker is now up and running.  
+
 ![docker_icon_running](/images/docker_icon_running.png)
 
  * After that just type `docker images` in your console to see if you already have the images installed.   
  * If so just skip to chapter 2 of this tutorial "Running script to get inside linux container:".   
+
 ![docker_images_full](/images/docker_images_full.png)
 
 
