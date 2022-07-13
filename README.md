@@ -57,7 +57,7 @@ RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
  * Last but not least this installs norminette and pygments for gdb syntax highlighting and sets your timezone to Berlin's timezone, so you'll have synced clock
 
 
-####After that you just make sure you're into your home directory (use cd) and type:
+ After that you just make sure you're into your home directory (use cd) and type:
 `docker build -t alpine:42 docker_image/`
 
 Wait for docker to finish building your image.
