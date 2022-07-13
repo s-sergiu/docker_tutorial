@@ -21,8 +21,33 @@ RUN su - ssergiu -c "pip install --user pygments norminette"
 RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 ```
 The **FROM** instruction initializes a new build stage and sets the Base Image for subsequent instructions. As such, a valid Dockerfile must start with a FROM instruction. The image can be any valid image.  
+
 `FROM alpine:latest`
 basically pulls the latest alpine linux image so it can build from it;
+
+```dockerfile
+RUN apk update
+RUN apk upgrade
+RUN apk add gcc git make vim sudo gdb valgrind zsh musl-dev py3-pip python3 tzdata
+```
+these three commands updates alpine package manager repositories and updates available programs if needed
+after that it installs the needed programs for you to be able to compile and check your executable for leaks with valgrind
+you can also add whatever extra things you might want instead of installing manually after attaching to the docker container
+
+```dockerfile
+RUN adduser --disabled-password -g "Sergiu Ster" ssergiu
+RUN echo "ssergiu:parola" | chpasswd
+RUN echo 'ssergiu ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
+```
+the first command adduser does exactly what it supposed to do, adds a user to your Alpine linux image (make sure you replace user with your username and add your name inbetween double quotes.
+in the second line you just need to replace user with your username and add an easy to remember password 
+third line just adds the user to the sudoers group using echo piped to visudo
+
+```dockerfile
+RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+```
+last, but not least, this sets your timezone to Berlin's timezone, so you'll have synced clock
+
 
 After that you just make sure you're into your home directory (use cd) and type:
 docker build -t alpine:42 docker_image/
