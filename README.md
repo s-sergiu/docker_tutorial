@@ -39,7 +39,7 @@ bash ~/42toolbox/init_docker.sh
 
 
  * After that just type `docker images` in your console to see if you already have the images installed.   
- * If so just skip to chapter 2 of this tutorial "Running script to get inside linux container:".   
+ * If so just skip to chapter 2 of this tutorial ["Running script to get inside linux container:"](#2.Running script to get inside linux container:).   
 
 
 ![docker_images_full](/images/docker_images_full.png)
