@@ -9,7 +9,7 @@ After that you need to clone the 42toolbox repository and run docker everytime y
 git clone https://github.com/alexandregv/42toolbox.git ~/42toolbox
 ```
 
-###Creating a linux image (Alpine):
+### Creating a linux image (Alpine):
 
 To create a linux image in docker first we need to create a directory called **docker_image** and create a Dockerfile inside it.
 Inside this dockerfile we will tell docker the instructions to build our linux image as follows:
@@ -63,7 +63,7 @@ RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
 Wait for docker to finish building your image.
 
-###Running script to get inside the Linux container: 
+### Running script to get inside the Linux container: 
 
 After docker succesfully built your Alpine Linux image, create a shell script and add the following to it:
 
