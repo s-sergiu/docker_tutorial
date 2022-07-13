@@ -54,6 +54,9 @@ bash ~/42toolbox/init_docker.sh
 
 To create a linux image in docker first we need to create a directory called **docker_image** and create a Dockerfile inside it.
 Inside this dockerfile we will tell docker the instructions to build our linux image as follows:
+
+
+
 ```dockerfile
 FROM alpine:latest
 
@@ -66,19 +69,26 @@ RUN echo '42user ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
 RUN su - 42user -c "pip install --user pygments norminette"
 RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 ```
+
+
 >The **FROM** instruction initializes a new build stage and sets the Base Image for subsequent instructions. As such, a valid Dockerfile must start with a FROM instruction. The image can be any valid image.  
 
 `FROM alpine:latest`
 basically pulls the latest alpine linux image so it can build from it;
+
+
 
 ```dockerfile
 RUN apk update
 RUN apk upgrade
 RUN apk add gcc git make vim sudo gdb valgrind zsh musl-dev py3-pip python3 tzdata
 ```
+
  * these three commands updates alpine package manager repositories and updates available programs if needed
  * after that it installs the needed programs for you to be able to compile and check your executable for leaks with valgrind
  * you can also add whatever extra things you might want instead of installing manually after attaching to the docker container
+
+
 
 ```dockerfile
 RUN adduser --disabled-password -g "Name Surname" 42user
@@ -92,6 +102,8 @@ RUN echo '42user ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
  * third line just adds the user to the sudoers group using echo piped to visudo    
 
 
+
+
 ```dockerfile
 RUN su - 42user -c "pip install --user pygments norminette"
 RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
@@ -102,6 +114,9 @@ RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 After that you just make sure you're into your home directory (use cd) and type:
 
 ### a. Building a docker image with the Dockerfile:
+
+
+
 ```shell
 docker build -t alpine:42 docker_image/
 ```
@@ -113,6 +128,8 @@ Wait for docker to finish building your image.
 ## 2.Running the script to get inside the Linux container: 
 
 After docker succesfully built your Alpine Linux image, create a shell script and add the following to it:
+
+
 
 ```shell
 #!/bin/zsh
