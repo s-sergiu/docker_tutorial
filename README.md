@@ -34,9 +34,9 @@ RUN apk update
 RUN apk upgrade
 RUN apk add gcc git make vim sudo gdb valgrind zsh musl-dev py3-pip python3 tzdata
 ```
-these three commands updates alpine package manager repositories and updates available programs if needed
-after that it installs the needed programs for you to be able to compile and check your executable for leaks with valgrind
-you can also add whatever extra things you might want instead of installing manually after attaching to the docker container
+ * these three commands updates alpine package manager repositories and updates available programs if needed
+ * after that it installs the needed programs for you to be able to compile and check your executable for leaks with valgrind
+ * you can also add whatever extra things you might want instead of installing manually after attaching to the docker container
 
 ```dockerfile
 RUN adduser --disabled-password -g "Name Surname" 42user
@@ -54,10 +54,10 @@ RUN echo '42user ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
 RUN su - 42user -c "pip install --user pygments norminette"
 RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 ```
-Last but not least this installs norminette and pygments for gdb syntax highlighting and sets your timezone to Berlin's timezone, so you'll have synced clock
+ * Last but not least this installs norminette and pygments for gdb syntax highlighting and sets your timezone to Berlin's timezone, so you'll have synced clock
 
 
-After that you just make sure you're into your home directory (use cd) and type:
+####After that you just make sure you're into your home directory (use cd) and type:
 `docker build -t alpine:42 docker_image/`
 
 Wait for docker to finish building your image.
