@@ -63,6 +63,8 @@ RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
 Wait for docker to finish building your image.
 
+
+
 ### Running script to get inside the Linux container: 
 
 After docker succesfully built your Alpine Linux image, create a shell script and add the following to it:
