@@ -15,7 +15,7 @@ bash ~/42toolbox/init_docker.sh
 
  * #### After you execute the init_docker.sh just press enter and you will get a message afterwards that docker is now starting.  
 
-        ![bash_docker_run](/images/docker_init.png)
+![bash_docker_run](/images/docker_init.png)
 
 
  * Make sure you click on remind me later if you're using 42Macs, you don't want to install updates for docker, **click remind me later**.  
