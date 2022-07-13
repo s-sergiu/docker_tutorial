@@ -1,6 +1,6 @@
 # Install Alpine Linux using docker
 
-- [1. Getting docker up and running](#1.Getting docker up and running:)
+- [1. Getting docker up and running](#1getting-docker-up-and-running)
   * [1.1 Purpose](#11-purpose)
   * [1.2 Scope](#12-scope)
   * [1.3 Acronyms](#13-acronyms)
