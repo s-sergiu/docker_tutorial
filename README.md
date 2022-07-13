@@ -84,7 +84,7 @@ RUN apk upgrade
 RUN apk add gcc git make vim sudo gdb valgrind zsh musl-dev py3-pip python3 tzdata
 ```
 
- * these three commands updates alpine package manager repositories and updates available programs if needed
+ * the first two commands updates alpine package manager repositories and updates available programs if needed
  * after that it installs the needed programs for you to be able to compile and check your executable for leaks with valgrind
  * you can also add whatever extra things you might want instead of installing manually after attaching to the docker container
 
