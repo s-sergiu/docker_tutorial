@@ -12,6 +12,7 @@ git clone https://github.com/alexandregv/42toolbox.git ~/42toolbox
 ```shell
 bash ~/42toolbox/init_docker.sh
 ```
+![bash_docker_run](/images/docker_init.png)
 
 ## 2.Creating a linux image (Alpine) using dockerfile:
 
