@@ -22,7 +22,7 @@ bash ~/42toolbox/init_docker.sh
  * Make sure you click on remind me later if you're using 42Macs, you don't want to install updates for docker, **click remind me later**.  
 
 
-![docker_update_reminder](/images/docker_update_reminder.png | width=100)
+![docker_update_reminder](/images/docker_update_reminder.png)
 
 
  * After that you can go to your docker icon in the top right corner of your screen and you can click it to see if docker is running or not.  
