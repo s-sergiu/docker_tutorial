@@ -1,5 +1,14 @@
 # Install Alpine Linux using docker
 
+- [1. Getting docker up and running](#1.Getting docker up and running:)
+  * [1.1 Purpose](#11-purpose)
+  * [1.2 Scope](#12-scope)
+  * [1.3 Acronyms](#13-acronyms)
+  * [1.4 References](#14-references)
+    + [1.4.1 Internal References](#141-internal-references)
+    + [1.4.2 External References](#142-external-references)
+  * [1.5 Overview](#15-overview)
+
 From what I've read so far, you can use Docker to create a Linux virtual environment from where you can mount your home directory (your Mac's home directory) and start working inside it (coding, debugging, valgrind leak checking and so on..).
 
 ## 1.Getting docker up and running:
@@ -39,7 +48,7 @@ bash ~/42toolbox/init_docker.sh
 
 
  * After that just type `docker images` in your console to see if you already have the images installed.   
- * If so just skip to chapter 2 of this tutorial ["Running script to get inside linux container:"](#2.Running script to get inside linux container:).   
+ * If so just skip to chapter 2 of this tutorial ["Running script to get inside linux container:"](#2.Running script to get inside the Linux container:).   
 
 
 ![docker_images_full](/images/docker_images_full.png)
