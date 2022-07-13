@@ -43,9 +43,9 @@ RUN adduser --disabled-password -g "Name Surname" 42user
 RUN echo "42user:password" | chpasswd
 RUN echo '42user ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
 ```
-the first command adduser does exactly what it supposed to do, adds a user to your Alpine linux image (make sure you replace user with your username and add your name inbetween double quotes.
-in the second line you just need to **replace **42use** with your username and add an easy to remember password instead of the word **42password** **
-third line just adds the user to the sudoers group using echo piped to visudo
+the first command adduser does exactly what it supposed to do, adds a user to your Alpine linux image (make sure you replace user with your username and add your name inbetween double quotes.  
+in the second line you just need to **replace **42use** with your username and add an easy to remember password instead of the word **42password** **  
+third line just adds the user to the sudoers group using echo piped to visudo  
 
 ```dockerfile
 RUN su - 42user -c "pip install --user pygments norminette"
