@@ -20,8 +20,8 @@ RUN echo 'ssergiu ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
 RUN su - ssergiu -c "pip install --user pygments norminette"
 RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 ```
-The **FROM** instruction initializes a new build stage and sets the Base Image for subsequent instructions. As such, a valid Dockerfile must start with a FROM instruction. The image can be any valid image.
-`FROM alpine:latest
+The **FROM** instruction initializes a new build stage and sets the Base Image for subsequent instructions. As such, a valid Dockerfile must start with a FROM instruction. The image can be any valid image.  
+`FROM alpine:latest`
 basically pulls the latest alpine linux image so it can build from it;
 
 After that you just make sure you're into your home directory (use cd) and type:
