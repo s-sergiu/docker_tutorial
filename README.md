@@ -6,7 +6,7 @@ If you don't have docker installed on your mac you just need to type command + s
 
 After that you need to clone the 42toolbox repository and run docker everytime you want to run it by executing the init_docker.sh file.
 
-To create a linux image in docker first we need to create a directory called **docker_image** and create a Dockerfile inside it.
+To create a linux image in docker first we need to create a directory called **docker_image**\textcolor{red}{red} and create a Dockerfile inside it.
 Inside this dockerfile we will tell docker the instructions to build our linux image as follows:
 ```dockerfile
 FROM alpine:latest
