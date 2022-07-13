@@ -3,7 +3,7 @@
 * [1. Getting docker up and running](#1getting-docker-up-and-running)
 * [2. Creating a linux image (Alpine) using dockerfile:](#2creating-a-linux-image-alpine-using-dockerfile)
   * [2.1 Building a docker image with the Dockerfile:](#building-a-docker-image-with-the-dockerfile)
-* [3. Running the script to get inside the linux container](#2running-the-script-to-get-inside-the-linux-container)
+* [3. Running the script to get inside the linux container](#a-building-a-docker-image-with-the-dockerfile)
 
 From what I've read so far, you can use Docker to create a Linux virtual environment from where you can mount your home directory (your Mac's home directory) and start working inside it (coding, debugging, valgrind leak checking and so on..).
 
@@ -44,7 +44,7 @@ bash ~/42toolbox/init_docker.sh
 
 
  * After that just type `docker images` in your console to see if you already have the images installed.   
- * If so just skip to chapter 2 of this tutorial ["Running script to get inside linux container:"](#2.Running script to get inside the Linux container:).   
+ * If so just skip to chapter 2 of this tutorial ["Running script to get inside linux container:"](#2running-the-script-to-get-inside-the-linux-container).   
 
 
 ![docker_images_full](/images/docker_images_full.png)
