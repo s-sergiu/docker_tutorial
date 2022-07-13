@@ -2,7 +2,7 @@
 
 * [1. Getting docker up and running](#1getting-docker-up-and-running)
 * [2. Creating a linux image (Alpine) using dockerfile:](#2creating-a-linux-image-alpine-using-dockerfile)
-  * [2.1 Building a docker image with the Dockerfile:](#abuilding-a-docker-image-with-the-dockerfile)
+  * [2.1 Building a docker image with the Dockerfile:](#a-building-a-docker-image-with-the-dockerfile)
 * [3. Running the script to get inside the linux container](#2running-the-script-to-get-inside-the-linux-container)
 
 From what I've read so far, you can use Docker to create a Linux virtual environment from where you can mount your home directory (your Mac's home directory) and start working inside it (coding, debugging, valgrind leak checking and so on..).
