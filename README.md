@@ -14,10 +14,10 @@ FROM alpine:latest
 RUN apk update
 RUN apk upgrade
 RUN apk add gcc git make vim sudo gdb valgrind zsh musl-dev py3-pip python3 tzdata
-RUN adduser --disabled-password -g "Sergiu Ster" ssergiu
-RUN echo "ssergiu:parola" | chpasswd
-RUN echo 'ssergiu ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
-RUN su - ssergiu -c "pip install --user pygments norminette"
+RUN adduser --disabled-password -g "Name Surname" **42user**
+RUN echo "**42user**:**password123**" | chpasswd
+RUN echo '**42user** ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
+RUN su - **42user** -c "pip install --user pygments norminette"
 RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 ```
 The **FROM** instruction initializes a new build stage and sets the Base Image for subsequent instructions. As such, a valid Dockerfile must start with a FROM instruction. The image can be any valid image.  
@@ -35,22 +35,23 @@ after that it installs the needed programs for you to be able to compile and che
 you can also add whatever extra things you might want instead of installing manually after attaching to the docker container
 
 ```dockerfile
-RUN adduser --disabled-password -g "Sergiu Ster" ssergiu
-RUN echo "ssergiu:parola" | chpasswd
-RUN echo 'ssergiu ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
+RUN adduser --disabled-password -g "Name Surname" **42user**
+RUN echo "**42user**:**password123**" | chpasswd
+RUN echo '**42user** ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
 ```
 the first command adduser does exactly what it supposed to do, adds a user to your Alpine linux image (make sure you replace user with your username and add your name inbetween double quotes.
 in the second line you just need to replace user with your username and add an easy to remember password 
 third line just adds the user to the sudoers group using echo piped to visudo
 
 ```dockerfile
+RUN su - **42user** -c "pip install --user pygments norminette"
 RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 ```
-last, but not least, this sets your timezone to Berlin's timezone, so you'll have synced clock
+last, but not least, this installs norminette and pygments for gdb syntax highlighting and sets your timezone to Berlin's timezone, so you'll have synced clock
 
 
 After that you just make sure you're into your home directory (use cd) and type:
-docker build -t alpine:42 docker_image/
+`docker build -t alpine:42 docker_image/`
 
 Wait for docker to finish building your image.
 
@@ -59,8 +60,9 @@ After docker succesfully built your Alpine Linux image, create a shell script an
 ```shell
 #!/bin/zsh
 #
-docker run -it  --dns 8.8.8.8 --dns 8.8.4.4 --workdir="/home/ssergiu" -e "OSTYPE=alpine" -e "SHELL=/bin/zsh" -e "TERM=xterm-256color" -e "HOSTNAME=alpine" --user=ssergiu --privileged=true --hostname=alpine -v $PWD:/home/ssergiu alpine:ssergiu "/bin/zsh"
+docker run -it  --dns 8.8.8.8 --dns 8.8.4.4 --workdir="/home/**42user**" -e "OSTYPE=alpine" -e "SHELL=/bin/zsh" -e "TERM=xterm-256color" -e "HOSTNAME=alpine" --user=**42user** --privileged=true --hostname=alpine -v $PWD:/home/**42user** alpine:**42user** "/bin/zsh"
 ```
+
 
 Make sure you have execute permission on it chmod +x and run it afterwads.
 
