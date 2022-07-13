@@ -1,15 +1,19 @@
-## Install Alpine Linux using docker
+# Install Alpine Linux using docker
 
 From what I've read so far, you can use Docker to create a Linux virtual environment from where you can mount your home directory (your Mac's home directory) and start working inside it (coding, debugging, valgrind leak checking and so on..).
 
+## 1.Getting docker up and running:
 If you don't have docker installed on your mac you just need to type `command + space`and type `"Managed Software Center"` and from there on just search for docker and click on the install button.
 
 After that you need to clone the 42toolbox repository and run docker everytime you want to run it by executing the **init_docker.sh** file.
 ```git
 git clone https://github.com/alexandregv/42toolbox.git ~/42toolbox
 ```
+```shell
+bash ~/42toolbox/init_docker.sh
+```
 
-### Creating a linux image (Alpine):
+## 2.Creating a linux image (Alpine) using dockerfile:
 
 To create a linux image in docker first we need to create a directory called **docker_image** and create a Dockerfile inside it.
 Inside this dockerfile we will tell docker the instructions to build our linux image as follows:
@@ -58,14 +62,18 @@ RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
  * Last but not least this installs norminette and pygments for gdb syntax highlighting and sets your timezone to Berlin's timezone, so you'll have synced clock
 
 
- After that you just make sure you're into your home directory (use cd) and type:
-`docker build -t alpine:42 docker_image/`
+After that you just make sure you're into your home directory (use cd) and type:
+
+### a. Building docker image with the Dockerfile:
+```shell
+docker build -t alpine:42 docker_image/
+```
 
 Wait for docker to finish building your image.
 
 
 
-### Running script to get inside the Linux container: 
+## 2.Running script to get inside the Linux container: 
 
 After docker succesfully built your Alpine Linux image, create a shell script and add the following to it:
 
