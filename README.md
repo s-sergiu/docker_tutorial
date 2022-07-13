@@ -1,11 +1,15 @@
 ## Install Alpine Linux using docker
 
-From what I've read so far, you can use Docker to create a Linux virtual environment from where you can mount your home directory and start working inside it (coding, debugging, valgrind leak checking and so on..).
+From what I've read so far, you can use Docker to create a Linux virtual environment from where you can mount your home directory (your Mac's home directory) and start working inside it (coding, debugging, valgrind leak checking and so on..).
 
-If you don't have docker installed on your mac you just need to type command + space and type "Managed Software Center" and from there on just search for docker and click on the install button.
+If you don't have docker installed on your mac you just need to type `command + space`and type `"Managed Software Center"` and from there on just search for docker and click on the install button.
 
-After that you need to clone the 42toolbox repository and run docker everytime you want to run it by executing the init_docker.sh file.
+After that you need to clone the 42toolbox repository and run docker everytime you want to run it by executing the **init_docker.sh** file.
+```git
+git clone https://github.com/alexandregv/42toolbox.git ~/42toolbox
+```
 
+###Creating a linux image (Alpine):
 To create a linux image in docker first we need to create a directory called **docker_image** and create a Dockerfile inside it.
 Inside this dockerfile we will tell docker the instructions to build our linux image as follows:
 ```dockerfile
@@ -40,7 +44,7 @@ RUN echo "**42user**:**password123**" | chpasswd
 RUN echo '**42user** ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
 ```
 the first command adduser does exactly what it supposed to do, adds a user to your Alpine linux image (make sure you replace user with your username and add your name inbetween double quotes.
-in the second line you just need to replace user with your username and add an easy to remember password 
+in the second line you just need to replace ****42user**** with your username and add an easy to remember password 
 third line just adds the user to the sudoers group using echo piped to visudo
 
 ```dockerfile
@@ -55,6 +59,7 @@ After that you just make sure you're into your home directory (use cd) and type:
 
 Wait for docker to finish building your image.
 
+###Running script to get inside the Linux container:
 After docker succesfully built your Alpine Linux image, create a shell script and add the following to it:
 
 ```shell
