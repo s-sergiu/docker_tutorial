@@ -16,7 +16,7 @@ bash ~/42toolbox/init_docker.sh
 ![bash_docker_done](/images/docker_init_after.png)
 ![docker_update_reminder](/images/docker_update_reminder.png)
 ![docker_icon_starting](/images/docker_icon_starting.png)
-![docker_icon_running](/images/docker_icon_running.png)
+![docker_icon_running](/images/docker_icon_running.png =250x)
 ![docker_images_full](/images/docker_images_full.png)
 
 
