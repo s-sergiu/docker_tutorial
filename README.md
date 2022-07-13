@@ -14,7 +14,7 @@ bash ~/42toolbox/init_docker.sh
 ```
 ![bash_docker_run](/images/docker_init.png)
 
- * After you execute the init_docker.sh just press enter and you will get a message afterwards that docker is now starting.  
+ * #### After you execute the init_docker.sh just press enter and you will get a message afterwards that docker is now starting.  
 
 ![bash_docker_done](/images/docker_init_after.png)
 
