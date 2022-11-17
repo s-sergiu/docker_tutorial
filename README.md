@@ -58,15 +58,15 @@ Inside this dockerfile we will tell docker the instructions to build our linux i
 
 
 ```dockerfile
-FROM alpine:latest
+FROM archlinux:latest
 
-RUN apk update
-RUN apk upgrade
-RUN apk add gcc git make vim sudo gdb valgrind zsh musl-dev py3-pip python3 tzdata
-RUN adduser --disabled-password -g "Name Surname" 42user
-RUN echo "42user:42password" | chpasswd
-RUN echo '42user ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
-RUN su - 42user -c "pip install --user pygments norminette"
+RUN pacman -Syy
+RUN echo "Y" | pacman -Syu
+RUN echo "Y" | pacman -S gcc git make vim sudo gdb valgrind zsh glibc python-pip python3 tzdata mariadb
+RUN useradd -m -G users -s /bin/bash ssergiu
+RUN echo "ssergiu:parola" | chpasswd
+RUN echo 'ssergiu ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
+RUN su - ssergiu -c "pip install --user pygments norminette"
 RUN cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 ```
 
@@ -134,7 +134,7 @@ After docker succesfully built your Alpine Linux image, create a shell script an
 ```shell
 #!/bin/zsh
 #
-docker run -it  --dns 8.8.8.8 --dns 8.8.4.4 --workdir="/home/42user" -e "OSTYPE=alpine" -e "SHELL=/bin/zsh" -e "TERM=xterm-256color" -e "HOSTNAME=alpine" --user=42user --privileged=true --hostname=alpine -v $PWD:/home/42user alpine:42user "/bin/zsh"
+docker run -it  --dns 8.8.8.8 --dns 8.8.4.4 --workdir="/home/ssergiu" -e "DEBUGINFOD_URLS=https://debuginfod.archlinux.org" -e "OSTYPE=archlinux" -e "SHELL=/bin/bash" -e "TERM=xterm-256color" -e "HOSTNAME=archlinux" --user=ssergiu --privileged=true --hostname=archlinux -v $PWD:/home/ssergiu archlinux:ssergiu "/bin/bash"
 ```
 
 
