@@ -1,9 +1,9 @@
-FROM alpine:latest
+FROM archlinux:latest
 
-RUN apk update
-RUN apk upgrade
-RUN apk add gcc git make vim sudo gdb valgrind zsh musl-dev py3-pip python3 tzdata
-RUN adduser --disabled-password -g "Sergiu Ster" ssergiu
+RUN pacman -Syy
+RUN echo "Y" | pacman -Syu
+RUN echo "Y" | pacman -S gcc git make vim sudo gdb valgrind zsh glibc python-pip python3 tzdata mariadb
+RUN useradd -m -G users -s /bin/bash ssergiu
 RUN echo "ssergiu:parola" | chpasswd
 RUN echo 'ssergiu ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
 RUN su - ssergiu -c "pip install --user pygments norminette"
